@@ -50,40 +50,11 @@
                 android:textColor="@color/black"
                 android:textSize="@dimen/_12sdp" />
 
-
-            <RelativeLayout
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvApartment"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="@dimen/_20sdp">
-
-                <RadioGroup
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/_10sdp"
-                    android:layout_marginRight="@dimen/_10sdp">
-
-                    <RadioButton
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingLeft="@dimen/_10sdp"
-                        android:text="@string/app_subtitle"
-                        android:textSize="@dimen/_11sdp" />
-
-
-                </RadioGroup>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerInParent="true"
-                    android:padding="@dimen/_5sdp"
-                    android:text="@string/main_txt_myop_price"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_11sdp" />
-
-
-            </RelativeLayout>
+                android:layout_margin="@dimen/_10sdp"/>
 
 
             <View

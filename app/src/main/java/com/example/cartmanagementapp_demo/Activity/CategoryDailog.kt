@@ -5,12 +5,17 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.cartmanagementapp_demo.Adapter.ApartmentViewAdapter
 import com.example.cartmanagementapp_demo.PojoClass.JsonBaseClass
 import com.example.cartmanagementapp_demo.R
+import kotlinx.android.synthetic.main.subcatagorylist_layout.*
 
 class CategoryDailog : AppCompatActivity() {
 
     var mainActivity_viewModel: MainActivity_ViewModel? = null
+
+    private val apartmentViewAdapter = ApartmentViewAdapter()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,6 +25,14 @@ class CategoryDailog : AppCompatActivity() {
         mainActivity_viewModel = ViewModelProvider(this).get(MainActivity_ViewModel::class.java)
 
         setData()
+
+        setAppartmentData()
+
+    }
+
+    private fun setAppartmentData() {
+        rvApartment.layoutManager = LinearLayoutManager(this)
+        rvApartment.adapter =apartmentViewAdapter
 
     }
 
