@@ -19,9 +19,12 @@ class MainActivity_ViewModel(application: Application) : AndroidViewModel(applic
 
     private var mutablejsonlist = MutableLiveData<JsonBaseClass>()
 
+    var mutuablePrice = MutableLiveData<Double>()
+
+    var item_price:Double?=0.00;
 
     var utils : utils = utils();
-    var customisebtnClick = MutableLiveData<String>()
+
 
 
     fun fetchCards(context: Context) :MutableLiveData<JsonBaseClass> {
@@ -32,10 +35,13 @@ class MainActivity_ViewModel(application: Application) : AndroidViewModel(applic
 
     }
 
-    fun onClick(view: View?) {
 
-        customisebtnClick.value = "click"
+    fun getPrice(spectificationL:Double){
 
+        item_price=0.0;
+        item_price=spectificationL;
+
+        mutuablePrice.value=item_price
 
     }
 
