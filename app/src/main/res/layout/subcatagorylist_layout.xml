@@ -1,0 +1,1243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:id="@+id/scrollable"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottomView">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <com.smarteist.autoimageslider.SliderView
+                android:id="@+id/sliderHomeSlider"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_gravity="center"
+                app:sliderAnimationDuration="800"
+                app:sliderAutoCycleDirection="right"
+                app:sliderAutoCycleEnabled="true"
+                app:sliderIndicatorEnabled="false"
+                app:sliderStartAutoCycle="true" />
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@color/new_splash_bg" />
+
+            <TextView
+                android:id="@+id/txtbtnpress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:padding="@dimen/_5sdp"
+                android:text="@string/txt_title_1"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/_20sdp">
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp">
+
+                    <RadioButton
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/_10sdp"
+                        android:text="@string/app_subtitle"
+                        android:textSize="@dimen/_11sdp" />
+
+
+                </RadioGroup>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
+                    android:padding="@dimen/_5sdp"
+                    android:text="@string/main_txt_myop_price"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11sdp" />
+
+
+            </RelativeLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@color/new_splash_bg" />
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:padding="@dimen/_5sdp"
+                android:text="@string/txt_title_2"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:orientation="horizontal">
+
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txt_bedcheckbox_1"
+                    android:paddingLeft="@dimen/_5sdp"
+                    android:textSize="@dimen/_11sdp"/>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/_5sdp">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_plus_BedcheckBox_1"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/bg_plus_minus_button"
+                        android:fontFamily="sans-serif-thin"
+                        android:text="@string/plus"
+                        android:textColor="@color/bg_button"
+                        android:textStyle="bold"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_product_spacial_price"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_item_count_BedcheckBox_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:text="@string/default_iteam_count"
+                        android:textColor="@color/error_bg"
+                        android:textSize="@dimen/_12sdp"
+                        app:layout_constraintBottom_toBottomOf="@+id/btn_plus"
+                        app:layout_constraintEnd_toStartOf="@+id/btn_plus"
+                        app:layout_constraintTop_toTopOf="@+id/btn_plus" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_minus_BedcheckBox_1"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/bg_plus_minus_button"
+                        android:fontFamily="sans-serif-thin"
+                        android:text="@string/minu"
+                        android:textColor="@color/bg_button"
+                        android:textStyle="bold"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_item_count"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_item_count"
+                        app:layout_constraintTop_toTopOf="@+id/tv_item_count" />
+
+                </LinearLayout>
+
+
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:orientation="horizontal">
+
+
+                <CheckBox
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txt_bedcheckbox_2"
+                    android:paddingLeft="@dimen/_5sdp"
+                    android:textSize="@dimen/_11sdp"/>
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/_5sdp">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_plus_BedcheckBox_2"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/bg_plus_minus_button"
+                        android:fontFamily="sans-serif-thin"
+                        android:text="@string/plus"
+                        android:textColor="@color/bg_button"
+                        android:textStyle="bold"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_product_spacial_price"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_item_count_BedcheckBox_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:text="@string/default_iteam_count"
+                        android:textColor="@color/error_bg"
+                        android:textSize="@dimen/_12sdp"
+                        app:layout_constraintBottom_toBottomOf="@+id/btn_plus"
+                        app:layout_constraintEnd_toStartOf="@+id/btn_plus"
+                        app:layout_constraintTop_toTopOf="@+id/btn_plus" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_minus_BedcheckBox_2"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/bg_plus_minus_button"
+                        android:fontFamily="sans-serif-thin"
+                        android:text="@string/minu"
+                        android:textColor="@color/bg_button"
+                        android:textStyle="bold"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_item_count"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_item_count"
+                        app:layout_constraintTop_toTopOf="@+id/tv_item_count" />
+
+                </LinearLayout>
+
+                <TextView
+
+                    android:layout_width="0dp"
+                    android:layout_weight="0.9"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:padding="@dimen/_5sdp"
+                    android:text="@string/bedcheck_price_1"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11sdp" />
+
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:orientation="horizontal">
+
+
+                <CheckBox
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txt_bedcheckbox_3"
+                    android:paddingLeft="@dimen/_5sdp"
+                    android:textSize="@dimen/_11sdp"/>
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/_5sdp">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_plus_BedcheckBox_3"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/bg_plus_minus_button"
+                        android:fontFamily="sans-serif-thin"
+                        android:text="@string/plus"
+                        android:textColor="@color/bg_button"
+                        android:textStyle="bold"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_product_spacial_price"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_item_count_BedcheckBox_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:text="@string/default_iteam_count"
+                        android:textColor="@color/error_bg"
+                        android:textSize="@dimen/_12sdp"
+                        app:layout_constraintBottom_toBottomOf="@+id/btn_plus"
+                        app:layout_constraintEnd_toStartOf="@+id/btn_plus"
+                        app:layout_constraintTop_toTopOf="@+id/btn_plus" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_minus_BedcheckBox_3"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/bg_plus_minus_button"
+                        android:fontFamily="sans-serif-thin"
+                        android:text="@string/minu"
+                        android:textColor="@color/bg_button"
+                        android:textStyle="bold"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_item_count"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_item_count"
+                        app:layout_constraintTop_toTopOf="@+id/tv_item_count" />
+
+                </LinearLayout>
+
+                <TextView
+
+                    android:layout_width="0dp"
+                    android:layout_weight="0.9"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:padding="@dimen/_5sdp"
+                    android:text="@string/bedcheck_price_2"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11sdp" />
+
+
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@color/new_splash_bg" />
+
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:padding="@dimen/_5sdp"
+                android:text="@string/txt_title_3"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:orientation="horizontal">
+
+
+                <CheckBox
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txt_bathroom_1"
+                    android:paddingLeft="@dimen/_5sdp"
+                    android:textSize="@dimen/_11sdp"/>
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/_5sdp">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_plus_BathcheckBox_1"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/bg_plus_minus_button"
+                        android:fontFamily="sans-serif-thin"
+                        android:text="@string/plus"
+                        android:textColor="@color/bg_button"
+                        android:textStyle="bold"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_product_spacial_price"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_item_count_BathcheckBox_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:text="@string/default_iteam_count"
+                        android:textColor="@color/error_bg"
+                        android:textSize="@dimen/_12sdp"
+                        app:layout_constraintBottom_toBottomOf="@+id/btn_plus"
+                        app:layout_constraintEnd_toStartOf="@+id/btn_plus"
+                        app:layout_constraintTop_toTopOf="@+id/btn_plus" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_minus_BathcheckBox_1"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/bg_plus_minus_button"
+                        android:fontFamily="sans-serif-thin"
+                        android:text="@string/minu"
+                        android:textColor="@color/bg_button"
+                        android:textStyle="bold"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_item_count"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_item_count"
+                        app:layout_constraintTop_toTopOf="@+id/tv_item_count" />
+
+                </LinearLayout>
+
+                <TextView
+
+                    android:layout_width="0dp"
+                    android:layout_weight="0.9"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:padding="@dimen/_5sdp"
+                    android:text="@string/bedcheck_price_1"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11sdp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:orientation="horizontal">
+
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/txt_bathroom_2"
+                    android:paddingLeft="@dimen/_5sdp"
+                    android:textSize="@dimen/_11sdp"/>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/_5sdp">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_plus_BathcheckBox_2"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/bg_plus_minus_button"
+                        android:fontFamily="sans-serif-thin"
+                        android:text="@string/plus"
+                        android:textColor="@color/bg_button"
+                        android:textStyle="bold"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_product_spacial_price"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_item_BathcheckBox_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:text="@string/default_iteam_count"
+                        android:textColor="@color/error_bg"
+                        android:textSize="@dimen/_12sdp"
+                        app:layout_constraintBottom_toBottomOf="@+id/btn_plus"
+                        app:layout_constraintEnd_toStartOf="@+id/btn_plus"
+                        app:layout_constraintTop_toTopOf="@+id/btn_plus" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_minus_BathcheckBox_2"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/bg_plus_minus_button"
+                        android:fontFamily="sans-serif-thin"
+                        android:text="@string/minu"
+                        android:textColor="@color/bg_button"
+                        android:textStyle="bold"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_item_count"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_item_count"
+                        app:layout_constraintTop_toTopOf="@+id/tv_item_count" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@color/new_splash_bg" />
+
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:padding="@dimen/_5sdp"
+                android:text="@string/txt_title_4"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_11sdp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:orientation="horizontal">
+
+
+                <CheckBox
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chechbox_living_1"
+                    android:paddingLeft="@dimen/_5sdp"
+                    android:textSize="@dimen/_11sdp"/>
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/_5sdp">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_plus_livingcheckBox_1"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/bg_plus_minus_button"
+                        android:fontFamily="sans-serif-thin"
+                        android:text="@string/plus"
+                        android:textColor="@color/bg_button"
+                        android:textStyle="bold"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_product_spacial_price"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_item_livingcheckBox_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:text="@string/default_iteam_count"
+                        android:textColor="@color/error_bg"
+                        android:textSize="@dimen/_12sdp"
+                        app:layout_constraintBottom_toBottomOf="@+id/btn_plus"
+                        app:layout_constraintEnd_toStartOf="@+id/btn_plus"
+                        app:layout_constraintTop_toTopOf="@+id/btn_plus" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_minus_livingcheckBox_1"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/bg_plus_minus_button"
+                        android:fontFamily="sans-serif-thin"
+                        android:text="@string/minu"
+                        android:textColor="@color/bg_button"
+                        android:textStyle="bold"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_item_count"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_item_count"
+                        app:layout_constraintTop_toTopOf="@+id/tv_item_count" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:orientation="horizontal">
+
+
+                <CheckBox
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chechbox_living_2"
+                    android:paddingLeft="@dimen/_5sdp"
+                    android:textSize="@dimen/_11sdp"/>
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/_5sdp">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_plus_livingcheckBox_2"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/bg_plus_minus_button"
+                        android:fontFamily="sans-serif-thin"
+                        android:text="@string/plus"
+                        android:textColor="@color/bg_button"
+                        android:textStyle="bold"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_product_spacial_price"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_item_count_livingcheckBox_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:text="@string/default_iteam_count"
+                        android:textColor="@color/error_bg"
+                        android:textSize="@dimen/_12sdp"
+                        app:layout_constraintBottom_toBottomOf="@+id/btn_plus"
+                        app:layout_constraintEnd_toStartOf="@+id/btn_plus"
+                        app:layout_constraintTop_toTopOf="@+id/btn_plus" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_minus_livingcheckBox_2"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/bg_plus_minus_button"
+                        android:fontFamily="sans-serif-thin"
+                        android:text="@string/minu"
+                        android:textColor="@color/bg_button"
+                        android:textStyle="bold"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_item_count"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_item_count"
+                        app:layout_constraintTop_toTopOf="@+id/tv_item_count" />
+
+                </LinearLayout>
+
+                <TextView
+
+                    android:layout_width="0dp"
+                    android:layout_weight="0.9"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:padding="@dimen/_5sdp"
+                    android:text="@string/bedcheck_price_1"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11sdp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:orientation="horizontal">
+
+
+                <CheckBox
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chechbox_living_3"
+                    android:paddingLeft="@dimen/_5sdp"
+                    android:textSize="@dimen/_11sdp"/>
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/_5sdp">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_plus_livingcheckBox_3"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/bg_plus_minus_button"
+                        android:fontFamily="sans-serif-thin"
+                        android:text="@string/plus"
+                        android:textColor="@color/bg_button"
+                        android:textStyle="bold"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_product_spacial_price"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_item_count_livingcheckBox_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:text="@string/default_iteam_count"
+                        android:textColor="@color/error_bg"
+                        android:textSize="@dimen/_12sdp"
+                        app:layout_constraintBottom_toBottomOf="@+id/btn_plus"
+                        app:layout_constraintEnd_toStartOf="@+id/btn_plus"
+                        app:layout_constraintTop_toTopOf="@+id/btn_plus" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_minus_livingcheckBox_3"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/bg_plus_minus_button"
+                        android:fontFamily="sans-serif-thin"
+                        android:text="@string/minu"
+                        android:textColor="@color/bg_button"
+                        android:textStyle="bold"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_item_count"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_item_count"
+                        app:layout_constraintTop_toTopOf="@+id/tv_item_count" />
+
+                </LinearLayout>
+
+                <TextView
+
+                    android:layout_width="0dp"
+                    android:layout_weight="0.9"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:padding="@dimen/_5sdp"
+                    android:text="@string/bedcheck_price_1"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11sdp" />
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@color/new_splash_bg" />
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:padding="@dimen/_5sdp"
+                android:text="@string/txt_title_5"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:orientation="horizontal">
+
+
+                <CheckBox
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chechbox_kitchen_1"
+                    android:paddingLeft="@dimen/_5sdp"
+                    android:textSize="@dimen/_11sdp"/>
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/_5sdp">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_plus_kitchencheckBox_1"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/bg_plus_minus_button"
+                        android:fontFamily="sans-serif-thin"
+                        android:text="@string/plus"
+                        android:textColor="@color/bg_button"
+                        android:textStyle="bold"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_product_spacial_price"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_item_kitchencheckBox_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:text="@string/default_iteam_count"
+                        android:textColor="@color/error_bg"
+                        android:textSize="@dimen/_12sdp"
+                        app:layout_constraintBottom_toBottomOf="@+id/btn_plus"
+                        app:layout_constraintEnd_toStartOf="@+id/btn_plus"
+                        app:layout_constraintTop_toTopOf="@+id/btn_plus" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_minus_kitchencheckBox_1"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/bg_plus_minus_button"
+                        android:fontFamily="sans-serif-thin"
+                        android:text="@string/minu"
+                        android:textColor="@color/bg_button"
+                        android:textStyle="bold"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_item_count"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_item_count"
+                        app:layout_constraintTop_toTopOf="@+id/tv_item_count" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:orientation="horizontal">
+
+
+                <CheckBox
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content"
+                    android:text="@string/checkbox_kitchen_2"
+                    android:paddingLeft="@dimen/_5sdp"
+                    android:textSize="@dimen/_11sdp"/>
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/_5sdp">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_plus_kitchencheckBox_2"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/bg_plus_minus_button"
+                        android:fontFamily="sans-serif-thin"
+                        android:text="@string/plus"
+                        android:textColor="@color/bg_button"
+                        android:textStyle="bold"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_product_spacial_price"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_item_count_kitchencheckBox_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:text="@string/default_iteam_count"
+                        android:textColor="@color/error_bg"
+                        android:textSize="@dimen/_12sdp"
+                        app:layout_constraintBottom_toBottomOf="@+id/btn_plus"
+                        app:layout_constraintEnd_toStartOf="@+id/btn_plus"
+                        app:layout_constraintTop_toTopOf="@+id/btn_plus" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_minus_kitchencheckBox_2"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/bg_plus_minus_button"
+                        android:fontFamily="sans-serif-thin"
+                        android:text="@string/minu"
+                        android:textColor="@color/bg_button"
+                        android:textStyle="bold"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_item_count"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_item_count"
+                        app:layout_constraintTop_toTopOf="@+id/tv_item_count" />
+
+                </LinearLayout>
+
+                <TextView
+
+                    android:layout_width="0dp"
+                    android:layout_weight="0.9"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:padding="@dimen/_5sdp"
+                    android:text="@string/bedcheck_price_1"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11sdp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:orientation="horizontal">
+
+
+                <CheckBox
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content"
+                    android:text="@string/checkbox_kitchen_3"
+                    android:paddingLeft="@dimen/_5sdp"
+                    android:textSize="@dimen/_11sdp"/>
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/_5sdp">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_plus_kitchencheckBox_3"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/bg_plus_minus_button"
+                        android:fontFamily="sans-serif-thin"
+                        android:text="@string/plus"
+                        android:textColor="@color/bg_button"
+                        android:textStyle="bold"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_product_spacial_price"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_item_count_kitchencheckBox_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:text="@string/default_iteam_count"
+                        android:textColor="@color/error_bg"
+                        android:textSize="@dimen/_12sdp"
+                        app:layout_constraintBottom_toBottomOf="@+id/btn_plus"
+                        app:layout_constraintEnd_toStartOf="@+id/btn_plus"
+                        app:layout_constraintTop_toTopOf="@+id/btn_plus" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_minus_kitchencheckBox_3"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/bg_plus_minus_button"
+                        android:fontFamily="sans-serif-thin"
+                        android:text="@string/minu"
+                        android:textColor="@color/bg_button"
+                        android:textStyle="bold"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_item_count"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_item_count"
+                        app:layout_constraintTop_toTopOf="@+id/tv_item_count" />
+
+                </LinearLayout>
+
+                <TextView
+
+                    android:layout_width="0dp"
+                    android:layout_weight="0.9"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:padding="@dimen/_5sdp"
+                    android:text="@string/bedcheck_price_1"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11sdp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:orientation="horizontal">
+
+
+                <CheckBox
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content"
+                    android:text="@string/checkbox_kitchen_4"
+                    android:paddingLeft="@dimen/_5sdp"
+                    android:textSize="@dimen/_11sdp"/>
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/_5sdp">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_plus_kitchencheckBox_4"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/bg_plus_minus_button"
+                        android:fontFamily="sans-serif-thin"
+                        android:text="@string/plus"
+                        android:textColor="@color/bg_button"
+                        android:textStyle="bold"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_product_spacial_price"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_item_count_kitchencheckBox_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:text="@string/default_iteam_count"
+                        android:textColor="@color/error_bg"
+                        android:textSize="@dimen/_12sdp"
+                        app:layout_constraintBottom_toBottomOf="@+id/btn_plus"
+                        app:layout_constraintEnd_toStartOf="@+id/btn_plus"
+                        app:layout_constraintTop_toTopOf="@+id/btn_plus" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_minus_kitchencheckBox_4"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/bg_plus_minus_button"
+                        android:fontFamily="sans-serif-thin"
+                        android:text="@string/minu"
+                        android:textColor="@color/bg_button"
+                        android:textStyle="bold"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="@+id/tv_item_count"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_item_count"
+                        app:layout_constraintTop_toTopOf="@+id/tv_item_count" />
+
+                </LinearLayout>
+
+                <TextView
+
+                    android:layout_width="0dp"
+                    android:layout_weight="0.9"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:padding="@dimen/_5sdp"
+                    android:text="@string/bedcheck_price_1"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_11sdp" />
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_marginRight="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@color/new_splash_bg" />
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:padding="@dimen/_5sdp"
+                android:text="@string/txt_title_6"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp" />
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:padding="@dimen/_3sdp"
+                android:text="@string/txt_title_7"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_200sdp"
+               android:layout_margin="@dimen/_10sdp"
+                android:textSize="@dimen/_12sdp"
+                android:textColor="@color/black"
+                android:background="@drawable/btn_customise"/>
+
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/bottomView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@color/bg_title"
+        android:orientation="horizontal"
+        android:padding="@dimen/_12sdp">
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_plus"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/bg_plus_minus_button"
+            android:fontFamily="sans-serif-thin"
+            android:text="@string/plus"
+            android:textColor="@color/bg_button"
+            android:textStyle="bold"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_product_spacial_price"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_item_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:text="@string/default_iteam_count"
+            android:textColor="@color/error_bg"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_plus"
+            app:layout_constraintEnd_toStartOf="@+id/btn_plus"
+            app:layout_constraintTop_toTopOf="@+id/btn_plus" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_minus"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/bg_plus_minus_button"
+            android:fontFamily="sans-serif-thin"
+            android:text="@string/minu"
+            android:textColor="@color/bg_button"
+            android:textStyle="bold"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_item_count"
+            app:layout_constraintEnd_toStartOf="@+id/tv_item_count"
+            app:layout_constraintTop_toTopOf="@+id/tv_item_count" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_pay"
+            android:gravity="center_horizontal"
+            android:padding="@dimen/_8sdp"
+            android:text="@string/txt_AddtoCart"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_13sdp"/>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

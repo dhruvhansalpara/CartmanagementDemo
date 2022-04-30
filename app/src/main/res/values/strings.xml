@@ -1,0 +1,60 @@
+<resources>
+    <string name="app_name">CartManagementApp_Demo</string>
+
+
+    <string name="app_subtitle">Home Cleaning</string>
+
+
+    <string name="main_txt_top">Make your own Package</string>
+
+    <string name="main_txt_myop_price">₹ 999.00</string>
+
+    <string name="txt_customisepack">Customize</string>
+    <string name="txt_bedcheckbox_1">I don’t want any bedroom cleaning</string>
+    <string name="txt_bedcheckbox_2">With Mattress Dry Vacuuming (No. of Bedrooms)</string>
+    <string name="txt_bedcheckbox_3">With Mattress Wet Shampooing (No. of Bedrooms)</string>
+
+    <string name="txt_bathroom_1">No. of Bathrooms</string>
+    <string name="txt_bathroom_2">I don’t want any bathroom cleaning</string>
+
+    <string name="chechbox_living_1">I don’t want any living room/dining room cleaning</string>
+    <string name="chechbox_living_2">With Sofa &amp; Carpet Dry Vacuuming</string>
+    <string name="chechbox_living_3">With Sofa &amp; Carpet Wet Shampooing</string>
+
+    <string name="chechbox_kitchen_1">I don’t want any kitchen cleaning</string>
+    <string name="checkbox_kitchen_2">With Chimney, Fridge &amp; Microwave Deep Cleaning</string>
+    <string name="checkbox_kitchen_3">With Chimney Deep Cleaning</string>
+    <string name="checkbox_kitchen_4">With Fridge &amp; Microwave Deep Cleaning</string>
+
+
+
+
+    <string name="txt_AddtoCart">Add to order - ₹ 999.00</string>
+
+    <string name="txt_title_1">Apartment Size ( Choose any One )</string>
+
+    <string name="txt_title_2">Bedroom Cleaning ( Choose any One )</string>
+
+    <string name="txt_title_3">Bathroom Cleaning ( Choose any One )</string>
+
+    <string name="txt_title_4">Living Room/Dining Room Cleaning ( Choose any One )</string>
+
+    <string name="txt_title_5">Kitchen Cleaning( Choose any One )</string>
+
+    <string name="txt_title_6">Preferences</string>
+
+    <string name="txt_title_7">Any special instructions</string>
+
+    <string name="plus">+</string>
+    <string name="minu">-</string>
+    <string name="default_iteam_count">0</string>
+
+    <string name="radio_txt1"> 1 BHK</string>
+
+    <string name="bedcheck_price_1">₹ 149.00</string>
+    <string name="bedcheck_price_2">₹ 249.00</string>
+
+
+
+
+</resources>
