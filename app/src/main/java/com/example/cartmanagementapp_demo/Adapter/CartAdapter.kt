@@ -18,12 +18,13 @@ import com.example.cartmanagementapp_demo.Utils.Constant.Companion.cartCurrentpo
 import com.example.cartmanagementapp_demo.Utils.Constant.Companion.iscartcountclick
 import kotlinx.android.synthetic.main.cart_item_layout.view.*
 
-class CartAdapter(var list: List<CartModel>,val viewModel: CartViewmodel):
+class CartAdapter(var list: List<CartModel>, val viewModel: CartViewmodel) :
     RecyclerView.Adapter<CartAdapter.CartViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CartViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.cart_item_layout,parent,false)
+        val view =
+            LayoutInflater.from(parent.context).inflate(R.layout.cart_item_layout, parent, false)
         return CartViewHolder(view)
     }
 
@@ -35,16 +36,16 @@ class CartAdapter(var list: List<CartModel>,val viewModel: CartViewmodel):
         var currentPosition = list[position]
         holder.itemView.txtCustomiseSubtitle.text = currentPosition.itemName
 
+        Log.e("dhruvtest", "--" + position + "--" + cartCurrentposion)
 
-
-        if (iscartcountclick && cartCurrentposion == position){
+        if (iscartcountclick && cartCurrentposion == position) {
             holder.itemView.txtAddOrderPrice.text = "$CartCountPrice"
 
-        }else{
+        } else {
             holder.itemView.txtAddOrderPrice.text = "${currentPosition.itemPrice}"
 
         }
-       // holder.itemView.txtItemQuantity.text = "${currentPosition.itemQuantity}"
+        // holder.itemView.txtItemQuantity.text = "${currentPosition.itemQuantity}"
 
         holder.itemView.ivCancle.setOnClickListener {
             viewModel.delete(currentPosition)
@@ -60,12 +61,12 @@ class CartAdapter(var list: List<CartModel>,val viewModel: CartViewmodel):
 
             if (totalcount >= 0) {
                 totalcount += 1
-                ButtonupdateView(totalcount,holder,currentPosition.itemPrice,position)
+                ButtonupdateView(totalcount, holder, currentPosition.itemPrice, position)
 
             } else {
                 totalcount = 0
                 iscartcountclick = false
-                ButtonupdateView(totalcount,holder,currentPosition.itemPrice,position)
+                ButtonupdateView(totalcount, holder, currentPosition.itemPrice, position)
             }
 
         }
@@ -74,11 +75,11 @@ class CartAdapter(var list: List<CartModel>,val viewModel: CartViewmodel):
             iscartcountclick = true
             if (totalcount >= 0) {
                 totalcount -= 1
-                ButtonupdateView(totalcount,holder,currentPosition.itemPrice,position)
+                ButtonupdateView(totalcount, holder, currentPosition.itemPrice, position)
             } else {
                 totalcount = 0
                 iscartcountclick = false
-                ButtonupdateView(totalcount,holder,currentPosition.itemPrice,position)
+                ButtonupdateView(totalcount, holder, currentPosition.itemPrice, position)
             }
         }
 
@@ -88,21 +89,19 @@ class CartAdapter(var list: List<CartModel>,val viewModel: CartViewmodel):
         }
 
 
-
-
     }
 
-    fun ButtonupdateView(totalcount : Int, view: CartViewHolder,finalprice : Double,position: Int){
+    fun ButtonupdateView(totalcount: Int, view: CartViewHolder, finalprice: Double, position: Int) {
 
         view.tv_item_count.text = totalcount.toString()
 
-        Log.e("dhruvTest","-position-"+position.toString())
+        Log.e("dhruvTest", "-position-" + position.toString())
 
-        viewModel!!.getCartCountUpdate(totalcount,finalprice,position)
+        viewModel!!.getCartCountUpdate(totalcount, finalprice, position)
 
     }
 
-    inner class CartViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
+    inner class CartViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         var btn_plus: AppCompatButton
         var btn_minus: AppCompatButton
