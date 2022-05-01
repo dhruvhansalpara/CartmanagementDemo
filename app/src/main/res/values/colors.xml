@@ -8,6 +8,11 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <color name="colorPrimary">#FF6200EE</color>
+    <color name="colorPrimaryDark">#FF3700B3</color>
+    <color name="colorAccent">#FF6200EE</color>
+
+
 
     <color name="new_splash_bg">#0064FF</color>
     <color name="startColor">#880064FF</color>bg_button

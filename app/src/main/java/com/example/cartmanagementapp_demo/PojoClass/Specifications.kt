@@ -1,9 +1,6 @@
 package com.example.cartmanagementapp_demo.PojoClass
 
-import android.os.Parcelable
-import kotlinx.android.parcel.Parcelize
 
-@Parcelize
 data class Specifications(val _id : String,
                           val name : ArrayList<String>,
                           val sequence_number : Int,
@@ -13,4 +10,4 @@ data class Specifications(val _id : String,
                           val range : Int,
                           val type : Int,
                           val is_required : Boolean,
-                          val isParentAssociate : Boolean): Parcelable
+                          val isParentAssociate : Boolean)

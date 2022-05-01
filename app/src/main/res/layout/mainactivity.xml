@@ -1,34 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_gravity="center"
         android:layout_margin="@dimen/_10sdp"
-        android:gravity="center">
+        android:gravity="center"
+        android:orientation="horizontal">
 
-
-        <ImageView
-            android:layout_width="@dimen/_60sdp"
-            android:layout_height="@dimen/_60sdp"
-            android:src="@drawable/cleaning"/>
-
-        <TextView
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/_15sdp"
-            android:textColor="@color/new_splash_bg"
-            android:textStyle="bold"
-            android:layout_marginLeft="@dimen/_25sdp"
-            android:text="@string/app_subtitle"/>
+            android:layout_height="wrap_content">
 
+            <ImageView
+                android:id="@+id/ivCart"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/cart"/>
+
+            <ImageView
+                android:id="@+id/cleanImag"
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_60sdp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/cleaning" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_15sdp"
+                android:textColor="@color/new_splash_bg"
+                android:textStyle="bold"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_below="@+id/cleanImag"
+                android:layout_marginLeft="@dimen/_25sdp"
+                android:text="@string/app_subtitle"/>
+        </RelativeLayout>
 
 
     </LinearLayout>
@@ -36,11 +52,11 @@
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardElevation="@dimen/_5sdp"
         android:layout_marginTop="@dimen/_50sdp"
+        android:padding="@dimen/_10sdp"
+        app:cardElevation="@dimen/_5sdp"
         app:cardPreventCornerOverlap="true"
-        app:cardUseCompatPadding="true"
-        android:padding="@dimen/_10sdp">
+        app:cardUseCompatPadding="true">
 
 
         <LinearLayout
@@ -51,17 +67,17 @@
 
             <ImageView
                 android:layout_width="0dp"
-                android:layout_weight="0.8"
                 android:layout_height="@dimen/_60sdp"
-                android:src="@drawable/household"/>
+                android:layout_weight="0.8"
+                android:src="@drawable/household" />
 
             <LinearLayout
                 android:layout_width="0dp"
-                android:layout_weight="1.5"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:layout_marginLeft="@dimen/_25sdp"
-                android:layout_marginRight="@dimen/_20sdp">
+                android:layout_marginRight="@dimen/_20sdp"
+                android:layout_weight="1.5"
+                android:orientation="vertical">
 
 
                 <TextView
@@ -69,48 +85,40 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/main_txt_top"
-                    android:textSize="@dimen/_12sdp"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp" />
 
 
                 <TextView
                     android:id="@+id/txtCustomisePrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/main_txt_myop_price"
                     android:layout_marginTop="@dimen/_10sdp"
-                    android:textSize="@dimen/_13sdp"
-                    android:textColor="@color/black"/>
-
-
+                    android:text="@string/main_txt_myop_price"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_13sdp" />
 
 
             </LinearLayout>
 
 
-
             <TextView
                 android:id="@+id/txtbtnpress"
                 android:layout_width="0dp"
-                android:layout_weight="1.1"
                 android:layout_height="wrap_content"
-                android:text="@string/txt_customisepack"
-                android:textSize="@dimen/_12sdp"
-                android:padding="@dimen/_5sdp"
-                android:onClick="@{(v) -> mainactivityviewmodel.onClick(v)}"
                 android:layout_gravity="center"
+                android:layout_weight="1.1"
                 android:background="@drawable/btn_customise"
-                android:textColor="@color/black"/>
-
-
+                android:onClick="@{(v) -> mainactivityviewmodel.onClick(v)}"
+                android:padding="@dimen/_5sdp"
+                android:text="@string/txt_customisepack"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp" />
 
 
         </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>
-
-
-
 
 
 </LinearLayout>

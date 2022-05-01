@@ -1,9 +1,7 @@
 package com.example.cartmanagementapp_demo.PojoClass
 
-import android.os.Parcelable
-import kotlinx.android.parcel.Parcelize
 
-@Parcelize
+
 data class ListData(
 
     val _id : String,
@@ -13,4 +11,4 @@ data class ListData(
     val is_default_selected : Boolean,
     val specification_group_id : String,
     val unique_id : Int
-): Parcelable
+)

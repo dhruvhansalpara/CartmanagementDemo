@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
 
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-      setContentView(R.layout.mainactivity)
+              setContentView(R.layout.mainactivity)
 
 
 
@@ -30,6 +30,12 @@ class MainActivity : AppCompatActivity() {
 
             finish()
 
+        }
+
+        ivCart.setOnClickListener {
+            startActivity(Intent(this, CartActivity::class.java))
+
+            finish()
         }
 
 

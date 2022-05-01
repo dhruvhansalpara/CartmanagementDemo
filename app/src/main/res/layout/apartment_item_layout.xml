@@ -9,23 +9,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <RadioGroup
-            android:id="@+id/rgGroup"
-            android:layout_width="wrap_content"
+        <RadioButton
+            android:id="@+id/rbApartment"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/_10sdp"
-            android:layout_marginRight="@dimen/_10sdp">
-
-            <RadioButton
-                android:id="@+id/rbApartment"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingLeft="@dimen/_10sdp"
-                android:text="@string/app_subtitle"
-                android:textSize="@dimen/_11sdp" />
-
-
-        </RadioGroup>
+            android:paddingLeft="@dimen/_10sdp"
+            android:text="@string/app_subtitle"
+            android:textSize="@dimen/_11sdp" />
 
         <TextView
             android:id="@+id/txtPrice"

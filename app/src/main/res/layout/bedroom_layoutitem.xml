@@ -1,6 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_3sdp"
+        android:layout_marginTop="@dimen/_2sdp"
+        android:orientation="horizontal">
+
+
+        <CheckBox
+            android:id="@+id/txtcheckBOx"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:paddingLeft="@dimen/_5sdp"
+            android:text="@string/txt_bedcheckbox_3"
+            android:textSize="@dimen/_11sdp" />
+
+
+        <LinearLayout
+            android:id="@+id/liCountView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_weight="1"
+            android:visibility="gone"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_plus_checkBox"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:background="@drawable/bg_plus_minus_button"
+                android:fontFamily="sans-serif-thin"
+                android:text="@string/plus"
+                android:textColor="@color/bg_button"
+                android:textStyle="bold"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_product_spacial_price"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_item_count_checkBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:text="@string/default_iteam_count"
+                android:textColor="@color/error_bg"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_plus"
+                app:layout_constraintEnd_toStartOf="@+id/btn_plus"
+                app:layout_constraintTop_toTopOf="@+id/btn_plus" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_minus_checkBox"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:background="@drawable/bg_plus_minus_button"
+                android:fontFamily="sans-serif-thin"
+                android:text="@string/minu"
+                android:textColor="@color/bg_button"
+                android:textStyle="bold"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_item_count"
+                app:layout_constraintEnd_toStartOf="@+id/tv_item_count"
+                app:layout_constraintTop_toTopOf="@+id/tv_item_count" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtCleanPrice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.5"
+            android:padding="@dimen/_5sdp"
+            android:text="@string/bedcheck_price_2"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_11sdp" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

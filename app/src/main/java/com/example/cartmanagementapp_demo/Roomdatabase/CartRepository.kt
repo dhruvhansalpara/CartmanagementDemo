@@ -1,4 +1,13 @@
 package com.example.cartmanagementapp_demo.Roomdatabase
 
-class CartRepository {
+class CartRepository (private val db: CartDatabase) {
+
+    suspend fun insert(item:CartModel) = db.getCartDao().insert(item)
+    suspend fun delete(item:CartModel) = db.getCartDao().delete(item)
+
+    fun allCartItems() = db.getCartDao().getAllGroceryItems()
+
+
+
+
 }
