@@ -4,6 +4,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.RecyclerView
@@ -36,52 +37,43 @@ class CartAdapter(var list: List<CartModel>, val viewModel: CartViewmodel) :
         var currentPosition = list[position]
         holder.itemView.txtCustomiseSubtitle.text = currentPosition.itemName
 
-        Log.e("dhruvtest", "--" + position + "--" + cartCurrentposion)
 
-        if (iscartcountclick && cartCurrentposion == position) {
-            holder.itemView.txtAddOrderPrice.text = "$CartCountPrice"
+        holder.itemView.txtAddOrderPrice.text = "${currentPosition.itemPrice}"
 
-        } else {
-            holder.itemView.txtAddOrderPrice.text = "${currentPosition.itemPrice}"
+        holder.itemView.tv_item_count_bottom.text ="${currentPosition.IteamCount}"
 
-        }
-        // holder.itemView.txtItemQuantity.text = "${currentPosition.itemQuantity}"
+
 
         holder.itemView.ivCancle.setOnClickListener {
             viewModel.delete(currentPosition)
         }
 
 //        To get total cost
-        var totalcount: Int = 0
+        var totalcount: Int = 1
 
+
+        Log.e("dhruvtest", "--count--" + currentPosition.IteamCount)
 
         holder.btn_plus.setOnClickListener {
 
-            iscartcountclick = true
+            currentPosition.IteamCount++
+            viewModel.update(currentPosition)
 
-            if (totalcount >= 0) {
-                totalcount += 1
-                ButtonupdateView(totalcount, holder, currentPosition.itemPrice, position)
+            viewModel.getCartCountUpdate(currentPosition)
 
-            } else {
-                totalcount = 0
-                iscartcountclick = false
-                ButtonupdateView(totalcount, holder, currentPosition.itemPrice, position)
-            }
+
 
         }
 
         holder.btn_minus.setOnClickListener {
-            iscartcountclick = true
-            if (totalcount >= 0) {
-                totalcount -= 1
-                ButtonupdateView(totalcount, holder, currentPosition.itemPrice, position)
-            } else {
-                totalcount = 0
-                iscartcountclick = false
-                ButtonupdateView(totalcount, holder, currentPosition.itemPrice, position)
-            }
+
+            currentPosition.IteamCount--
+
+            viewModel.update(currentPosition)
+            viewModel.getCartCountUpdate(currentPosition)
+
         }
+
 
 
         holder.itemView.ivCancle.setOnClickListener {
@@ -91,13 +83,15 @@ class CartAdapter(var list: List<CartModel>, val viewModel: CartViewmodel) :
 
     }
 
-    fun ButtonupdateView(totalcount: Int, view: CartViewHolder, finalprice: Double, position: Int) {
+    fun ButtonupdateView(count : Int,holder: CartViewHolder) {
 
-        view.tv_item_count.text = totalcount.toString()
 
-        Log.e("dhruvTest", "-position-" + position.toString())
+        //  Constant.CartItemCount = totalcount
 
-        viewModel!!.getCartCountUpdate(totalcount, finalprice, position)
+
+        //Log.e("dhruvTest", "-position-" + position.toString())
+
+        // viewModel!!.getCartCountUpdate(totalcount, finalprice, position)
 
     }
 

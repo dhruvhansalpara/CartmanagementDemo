@@ -31,7 +31,7 @@ class ApartmentViewAdapter (val jsonBaseClass: JsonBaseClass,val activity: Categ
 
         val listData : ListData= jsonBaseClass!!.specifications.get(0).list.get(position)
 
-        var replceString = listData.name.toString().replace("[", "").replace("]", "");
+        var replceString : String = listData.name.toString().replace("[", "").replace("]", "");
 
 
         holder.rbApartment.text=replceString.toString()
@@ -52,7 +52,7 @@ class ApartmentViewAdapter (val jsonBaseClass: JsonBaseClass,val activity: Categ
 
                     Log.e("dhruvtest","-aprment-"+Constant.aparmentsize)
 
-                    activity.mainActivity_viewModel!!.getPrice(listData.price.toDouble())
+                    activity.mainActivity_viewModel!!.getPrice(listData.price.toDouble(),replceString.toString())
                 }
             })
 

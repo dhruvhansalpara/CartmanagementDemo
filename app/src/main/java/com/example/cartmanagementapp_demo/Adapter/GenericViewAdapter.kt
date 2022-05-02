@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatTextView
+import androidx.constraintlayout.solver.GoalRow
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cartmanagementapp_demo.Activity.CategoryDailog
@@ -58,12 +59,37 @@ class GenericViewAdapter(
 
         Log.e("dhruvtest", "--" + position)
 
+
+
         if (categotyTag == "BedRoom") {
 
-            BedroomSize = jsonBaseClass!!.specifications.get(1).list.size.toInt()
+            var listData: ListData ? = null
 
-            val listData: ListData = jsonBaseClass!!.specifications.get(1).list.get(position)
-            var replceString = listData.name.toString().replace("[", "").replace("]", "");
+            if(Constant.aparmentsize == 0){
+                BedroomSize = jsonBaseClass!!.specifications.get(1).list.size.toInt()
+                 listData = jsonBaseClass!!.specifications.get(1).list.get(position)
+
+            }else if(Constant.aparmentsize == 1){
+                BedroomSize = jsonBaseClass!!.specifications.get(2).list.size.toInt()
+                 listData = jsonBaseClass!!.specifications.get(2).list.get(position)
+
+            }else if(Constant.aparmentsize == 2){
+                BedroomSize = jsonBaseClass!!.specifications.get(3).list.size.toInt()
+                 listData = jsonBaseClass!!.specifications.get(3).list.get(position)
+
+            }else if(Constant.aparmentsize == 3){
+                BedroomSize = jsonBaseClass!!.specifications.get(4).list.size.toInt()
+                listData = jsonBaseClass!!.specifications.get(4).list.get(position)
+
+            }else if(Constant.aparmentsize == 4){
+                BedroomSize = jsonBaseClass!!.specifications.get(5).list.size.toInt()
+                listData = jsonBaseClass!!.specifications.get(5).list.get(position)
+
+            }
+
+
+
+            var replceString = listData!!.name.toString().replace("[", "").replace("]", "");
             holder.txtcheckBOx.text = replceString.toString()
             holder.txtCleanPrice.text = "₹ " + listData.price.toString()
 
@@ -87,11 +113,11 @@ class GenericViewAdapter(
 
                 if (totalcount >= 0) {
                     totalcount += 1
-                    BedroomupdateView(totalcount, holder, position, listData.price,replceString.toString())
+                    BedroomupdateView(totalcount, holder, position, listData!!.price,replceString.toString())
 
                 } else {
                     totalcount = 0
-                    BedroomupdateView(totalcount, holder, position, listData.price,replceString)
+                    BedroomupdateView(totalcount, holder, position, listData!!.price,replceString)
                 }
 
 
@@ -99,10 +125,10 @@ class GenericViewAdapter(
             holder.btn_minus.setOnClickListener {
                 if (totalcount >= 0) {
                     totalcount -= 1
-                    BedroomupdateView(totalcount, holder, position, listData.price,replceString)
+                    BedroomupdateView(totalcount, holder, position, listData!!.price,replceString)
                 } else {
                     totalcount = 0
-                    BedroomupdateView(totalcount, holder, position, listData.price,replceString)
+                    BedroomupdateView(totalcount, holder, position, listData!!.price,replceString)
                 }
             }
 
@@ -111,17 +137,55 @@ class GenericViewAdapter(
 
         if (categotyTag == "Bathroom" ) {
 
-            BathroomSize = jsonBaseClass!!.specifications.get(6).list.size.toInt()
+            var listData: ListData ? = null
+
+            var replceString : String ? = null
+
+            if(Constant.aparmentsize == 0){
+                holder.liMainView.visibility = View.VISIBLE
+
+                BathroomSize = jsonBaseClass!!.specifications.get(6).list.size.toInt()
+                listData = jsonBaseClass!!.specifications.get(6).list.get(position)
+
+                replceString = listData!!.name.toString().replace("[", "").replace("]", "");
 
 
-            val listData: ListData = jsonBaseClass!!.specifications.get(6).list.get(position)
-            var replceString = listData.name.toString().replace("[", "").replace("]", "");
+            }else if(Constant.aparmentsize == 1){
+                holder.liMainView.visibility = View.VISIBLE
+                BathroomSize = jsonBaseClass!!.specifications.get(7).list.size.toInt()
+                listData = jsonBaseClass!!.specifications.get(7).list.get(position)
 
-            holder.txtcheckBOx.text = replceString.toString()
+                replceString = listData!!.name.toString().replace("[", "").replace("]", "");
 
 
 
-            holder.txtCleanPrice.text = "₹ " + listData.price.toString()
+            }else if(Constant.aparmentsize == 2){
+                holder.liMainView.visibility = View.VISIBLE
+                BathroomSize = jsonBaseClass!!.specifications.get(8).list.size.toInt()
+                listData = jsonBaseClass!!.specifications.get(8).list.get(position)
+                replceString = listData!!.name.toString().replace("[", "").replace("]", "");
+
+
+            }else if(Constant.aparmentsize == 3){
+                holder.liMainView.visibility = View.VISIBLE
+                BathroomSize = jsonBaseClass!!.specifications.get(8).list.size.toInt()
+                listData = jsonBaseClass!!.specifications.get(8).list.get(position)
+                replceString = listData!!.name.toString().replace("[", "").replace("]", "");
+
+            }else if(Constant.aparmentsize == 4){
+                holder.liMainView.visibility = View.VISIBLE
+                BathroomSize = jsonBaseClass!!.specifications.get(8).list.size.toInt()
+                listData = jsonBaseClass!!.specifications.get(8).list.get(position)
+                replceString = listData!!.name.toString().replace("[", "").replace("]", "");
+
+            }
+
+
+            holder.txtcheckBOx.text = replceString!!.toString()
+
+
+
+            holder.txtCleanPrice.text = "₹ " + listData!!.price.toString()
 
 
             holder.txtcheckBOx.setOnClickListener { // checkbox.setChecked(true);
@@ -143,10 +207,10 @@ class GenericViewAdapter(
 
                 if (totalcount >= 0) {
                     totalcount += 1
-                    BathroomupdateView(totalcount, holder, position, listData.price,replceString)
+                    BathroomupdateView(totalcount, holder, position, listData!!.price,replceString!!)
                 } else {
                     totalcount = 0
-                    BathroomupdateView(totalcount, holder, position, listData.price,replceString)
+                    BathroomupdateView(totalcount, holder, position, listData!!.price,replceString!!)
                 }
 
 
@@ -154,21 +218,40 @@ class GenericViewAdapter(
             holder.btn_minus.setOnClickListener {
                 if (totalcount >= 0) {
                     totalcount -= 1
-                    BathroomupdateView(totalcount, holder, position, listData.price,replceString)
+                    BathroomupdateView(totalcount, holder, position, listData!!.price,replceString!!)
                 } else {
                     totalcount = 0
-                    BathroomupdateView(totalcount, holder, position, listData.price,replceString)
+                    BathroomupdateView(totalcount, holder, position, listData!!.price,replceString!!)
                 }
             }
 
         }
 
         if (categotyTag == "RoomView" ) {
+            var listData: ListData ? = null
 
-            roomSize = jsonBaseClass!!.specifications.get(9).list.size.toInt()
+            if(Constant.aparmentsize == 0){
+                roomSize = jsonBaseClass!!.specifications.get(9).list.size.toInt()
+                listData = jsonBaseClass!!.specifications.get(9).list.get(position)
 
-            val listData: ListData = jsonBaseClass!!.specifications.get(9).list.get(position)
-            var replceString = listData.name.toString().replace("[", "").replace("]", "");
+            }else if(Constant.aparmentsize == 1){
+                roomSize = jsonBaseClass!!.specifications.get(10).list.size.toInt()
+                listData = jsonBaseClass!!.specifications.get(10).list.get(position)
+
+            }else if(Constant.aparmentsize == 2){
+                roomSize = jsonBaseClass!!.specifications.get(11).list.size.toInt()
+                listData = jsonBaseClass!!.specifications.get(11).list.get(position)
+
+            }else if(Constant.aparmentsize == 3){
+                roomSize = jsonBaseClass!!.specifications.get(12).list.size.toInt()
+                listData = jsonBaseClass!!.specifications.get(12).list.get(position)
+
+            }else if(Constant.aparmentsize == 4){
+                roomSize = jsonBaseClass!!.specifications.get(13).list.size.toInt()
+                listData = jsonBaseClass!!.specifications.get(14).list.get(position)
+
+            }
+            var replceString = listData!!.name.toString().replace("[", "").replace("]", "");
 
             holder.txtcheckBOx.text = replceString.toString()
 
@@ -195,10 +278,10 @@ class GenericViewAdapter(
 
                 if (totalcount >= 0) {
                     totalcount += 1
-                    RoomupdateView(totalcount, holder, position, listData.price,replceString)
+                    RoomupdateView(totalcount, holder, position, listData!!.price,replceString)
                 } else {
                     totalcount = 0
-                    RoomupdateView(totalcount, holder, position, listData.price,replceString)
+                    RoomupdateView(totalcount, holder, position, listData!!.price,replceString)
                 }
 
 
@@ -206,21 +289,39 @@ class GenericViewAdapter(
             holder.btn_minus.setOnClickListener {
                 if (totalcount >= 0) {
                     totalcount -= 1
-                    RoomupdateView(totalcount, holder, position, listData.price,replceString)
+                    RoomupdateView(totalcount, holder, position, listData!!.price,replceString)
                 } else {
                     totalcount = 0
-                    RoomupdateView(totalcount, holder, position, listData.price,replceString)
+                    RoomupdateView(totalcount, holder, position, listData!!.price,replceString)
                 }
             }
 
 
         }
         if (categotyTag == "Kitchen" ) {
+            var listData: ListData ? = null
+            if(Constant.aparmentsize == 0){
+                KitchenSize = jsonBaseClass!!.specifications.get(15).list.size.toInt()
+                listData = jsonBaseClass!!.specifications.get(15).list.get(position)
 
-            roomSize = jsonBaseClass!!.specifications.get(14).list.size.toInt()
+            }else if(Constant.aparmentsize == 1){
+                KitchenSize = jsonBaseClass!!.specifications.get(16).list.size.toInt()
+                listData = jsonBaseClass!!.specifications.get(16).list.get(position)
 
-            val listData: ListData = jsonBaseClass!!.specifications.get(14).list.get(position)
-            var replceString = listData.name.toString().replace("[", "").replace("]", "");
+            }else if(Constant.aparmentsize == 2){
+                KitchenSize = jsonBaseClass!!.specifications.get(17).list.size.toInt()
+                listData = jsonBaseClass!!.specifications.get(17).list.get(position)
+
+            }else if(Constant.aparmentsize == 3){
+                KitchenSize = jsonBaseClass!!.specifications.get(18).list.size.toInt()
+                listData = jsonBaseClass!!.specifications.get(18).list.get(position)
+
+            }else if(Constant.aparmentsize == 4){
+                KitchenSize = jsonBaseClass!!.specifications.get(19).list.size.toInt()
+                listData = jsonBaseClass!!.specifications.get(19).list.get(position)
+
+            }
+            var replceString = listData!!.name.toString().replace("[", "").replace("]", "");
 
             holder.txtcheckBOx.text = replceString.toString()
 
@@ -248,7 +349,7 @@ class GenericViewAdapter(
 
                 if (totalcount >= 0) {
                     totalcount += 1
-                    KitchenupdateView(totalcount, holder, position, listData.price,replceString)
+                    KitchenupdateView(totalcount, holder, position, listData!!.price,replceString)
                 } else {
                     totalcount = 0
                     KitchenupdateView(totalcount, holder, position, listData.price,replceString)
@@ -329,16 +430,16 @@ class GenericViewAdapter(
 
 
         if (categotyTag == "BedRoom") {
-            string = jsonBaseClass!!.specifications.get(1).list.size.toString()
+            string = jsonBaseClass!!.specifications.get(1).list.size.toInt().toString()
         }
         if (categotyTag == "Bathroom") {
-            string = jsonBaseClass!!.specifications.get(6).list.size.toString()
+            string = jsonBaseClass!!.specifications.get(6).list.size.toInt().toString()
         }
         if (categotyTag == "RoomView") {
-            string = jsonBaseClass!!.specifications.get(9).list.size.toString()
+            string =jsonBaseClass!!.specifications.get(9).list.size.toInt().toString()
         }
         if (categotyTag == "Kitchen") {
-            string = jsonBaseClass!!.specifications.get(14).list.size.toString()
+            string = jsonBaseClass!!.specifications.get(15).list.size.toInt().toString()
         }
 
         return string!!.toInt()
@@ -355,7 +456,7 @@ class GenericViewAdapter(
         var btn_plus: AppCompatButton
         var btn_minus: AppCompatButton
         var tv_item_count: AppCompatTextView
-
+        var liMainView : LinearLayout
 
         init {
             txtcheckBOx = view.findViewById(R.id.txtcheckBOx)
@@ -364,6 +465,7 @@ class GenericViewAdapter(
             btn_plus = view.findViewById(R.id.btn_plus_checkBox)
             tv_item_count = view.findViewById(R.id.tv_item_count_checkBox)
             btn_minus = view.findViewById(R.id.btn_minus_checkBox)
+            liMainView = view.findViewById(R.id.liMainView)
 
 
         }

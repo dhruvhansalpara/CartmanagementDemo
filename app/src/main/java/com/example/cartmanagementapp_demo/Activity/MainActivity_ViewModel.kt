@@ -12,6 +12,7 @@ import com.example.cartmanagementapp_demo.PojoClass.JsonBaseClass
 import com.example.cartmanagementapp_demo.Roomdatabase.CartModel
 import com.example.cartmanagementapp_demo.Roomdatabase.CartRepository
 import com.example.cartmanagementapp_demo.Utils.AppRepo
+import com.example.cartmanagementapp_demo.Utils.Constant
 import com.example.cartmanagementapp_demo.Utils.Constant.Companion.TotolInfoAbout
 import com.example.cartmanagementapp_demo.Utils.utils
 import com.google.gson.Gson
@@ -56,9 +57,13 @@ class MainActivity_ViewModel(application: Application) : AndroidViewModel(applic
     }
 
 
-    fun getPrice(spectificationL:Double){
+    fun getPrice(spectificationL:Double,name : String){
+
+
+        TotolInfoAbout = name
 
         appartment_price=0.0;
+
 
         if(bottomfinalCount!! > 0){
             appartment_price= spectificationL * bottomfinalCount!!;
@@ -79,7 +84,7 @@ class MainActivity_ViewModel(application: Application) : AndroidViewModel(applic
 
         Log.e("dhruvtest","--totalprice-"+bedroomPrice.toString())
 
-        TotolInfoAbout = name
+        TotolInfoAbout = name?.plus(name)
 
         mutuablePrice.value= appartment_price?.plus(bedroomPrice!!.toDouble())
 
@@ -94,7 +99,7 @@ class MainActivity_ViewModel(application: Application) : AndroidViewModel(applic
 
         Log.e("dhruvtest","--totalprice-"+bathroomPrice.toString())
 
-        TotolInfoAbout = name
+        TotolInfoAbout = name?.plus(name)
 
         mutuablePrice.value= appartment_price?.plus(bedroomPrice!!.toDouble())?.plus(bathroomPrice!!.toDouble())
 
@@ -109,7 +114,7 @@ class MainActivity_ViewModel(application: Application) : AndroidViewModel(applic
 
         Log.e("dhruvtest","--totalprice-"+roomPrice.toString())
 
-        TotolInfoAbout = name
+        TotolInfoAbout = name?.plus(name)?.plus(name)
 
         mutuablePrice.value= appartment_price?.plus(bedroomPrice!!.toDouble())?.plus(bathroomPrice!!.toDouble())
             ?.plus(roomPrice!!.toDouble())
@@ -125,7 +130,7 @@ class MainActivity_ViewModel(application: Application) : AndroidViewModel(applic
 
         Log.e("dhruvtest","--totalprice-"+kitchenPrice.toString())
 
-        TotolInfoAbout = name
+        //TotolInfoAbout = name
 
         mutuablePrice.value= appartment_price?.plus(bedroomPrice!!.toDouble())?.plus(bathroomPrice!!.toDouble())
             ?.plus(roomPrice!!.toDouble())?.plus(kitchenPrice!!.toDouble())
@@ -138,11 +143,19 @@ class MainActivity_ViewModel(application: Application) : AndroidViewModel(applic
     fun getBottomfinalPrice(finalprice : Int , isclick : Boolean ){
 
        if (isclick){
-           bottomfinalCount = finalprice
+
+           Constant.CartItemCount = finalprice.toInt()
+
+           mutuablePrice.value= appartment_price?.plus(bedroomPrice!!.toDouble())?.plus(bathroomPrice!!.toDouble())
+               ?.plus(roomPrice!!.toDouble())?.plus(kitchenPrice!!.toDouble())?.times(finalprice)
+
 
 
        }else{
-           bottomfinalCount = 0
+
+           mutuablePrice.value= appartment_price?.plus(bedroomPrice!!.toDouble())?.plus(bathroomPrice!!.toDouble())
+               ?.plus(roomPrice!!.toDouble())?.plus(kitchenPrice!!.toDouble())
+
        }
 
 

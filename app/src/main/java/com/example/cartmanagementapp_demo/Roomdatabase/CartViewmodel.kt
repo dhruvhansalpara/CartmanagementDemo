@@ -10,7 +10,7 @@ import kotlinx.coroutines.launch
 
 class CartViewmodel(private val repository: CartRepository): ViewModel() {
 
-    var mutuableCount = MutableLiveData<Int>()
+    var mutuableCount = MutableLiveData<CartModel>()
 
     fun insert(item:CartModel) = GlobalScope.launch {
         repository!!.insert(item)
@@ -19,17 +19,28 @@ class CartViewmodel(private val repository: CartRepository): ViewModel() {
     fun delete(item: CartModel) = GlobalScope.launch {
         repository.delete(item)
     }
+
+
+    fun  update(item: CartModel) = GlobalScope.launch {
+        repository.update(item)
+    }
+
     fun allCartItems() = repository.allCartItems()
 
-    fun getCartCountUpdate(count : Int,totalfinalprice:Double,position : Int){
+    fun getCartCountUpdate(cartModel: CartModel){
 
-        var multiplycount = totalfinalprice.toInt() * count
+        var multiplevalue : String ="${cartModel.itemPrice  * cartModel.IteamCount}"
+                cartModel.itemPrice = multiplevalue.toDouble()
+       cartModel.IteamCount = cartModel.IteamCount
+        cartModel.itemName = cartModel.itemName
+        cartModel.packageName = cartModel.packageName
 
-        cartCurrentposion = position
+        Log.e("dhruvtest","--"+multiplevalue+"--"+cartModel.IteamCount+"---"+cartModel.itemPrice)
 
-        mutuableCount.value =  multiplycount
 
-        Log.e("dhruvtest","--carttotalupdate0-"+mutuableCount.value.toString()+ " ---"+count+"==="+multiplycount.toInt())
+        mutuableCount.value =  cartModel
+
+
 
     }
 

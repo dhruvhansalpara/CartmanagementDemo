@@ -52,10 +52,13 @@ class CartActivity : AppCompatActivity() {
 
         })
 
-        ViewModel!!.mutuableCount.observe(this,
-            Observer<Int> { s ->
 
-                CartCountPrice = s
+
+        ViewModel!!.mutuableCount.observe(this,
+            Observer<CartModel> { s ->
+
+               ViewModel.update(s)
+                cartAdapter.notifyDataSetChanged()
 
 
                // txtAddOrderPrice.text="Add Order : "+s.toString()

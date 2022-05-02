@@ -14,6 +14,7 @@ import com.example.cartmanagementapp_demo.PojoClass.JsonBaseClass
 import com.example.cartmanagementapp_demo.R
 import com.example.cartmanagementapp_demo.Roomdatabase.*
 import com.example.cartmanagementapp_demo.Utils.Constant
+import com.example.cartmanagementapp_demo.Utils.Constant.Companion.CartItemCount
 import com.example.cartmanagementapp_demo.Utils.Constant.Companion.PackageName
 import com.example.cartmanagementapp_demo.Utils.Constant.Companion.TotolInfoAbout
 import com.example.cartmanagementapp_demo.Utils.Constant.Companion.TotolPrice
@@ -143,7 +144,7 @@ class CategoryDailog : AppCompatActivity() {
         txtAddOrderPrice.setOnClickListener {
 
 
-            var item = CartModel(Constant.TotolInfoAbout, Constant.PackageName, Constant.TotolPrice)
+            var item = CartModel(Constant.TotolInfoAbout, Constant.PackageName, Constant.TotolPrice,CartItemCount)
 
             Log.e("dhruvtest","-data-"+item.toString())
 
@@ -159,6 +160,9 @@ class CategoryDailog : AppCompatActivity() {
             Observer<Double> { s ->
                 TotolPrice = s.toDouble()
 
+                var item = CartModel(Constant.TotolInfoAbout, Constant.PackageName, Constant.TotolPrice,CartItemCount)
+
+                cart_viewModel!!.update(item)
                 txtAddOrderPrice.text="Add Order : "+s.toString()
                 Log.e("test",""+s.toString())
 

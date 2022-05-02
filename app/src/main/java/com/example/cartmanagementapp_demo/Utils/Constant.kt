@@ -14,6 +14,7 @@ class Constant {
 
         var iscartcountclick : Boolean = false
         var cartCurrentposion : Int = 0
+        var CartItemCount : Int = 1
 
     }
 

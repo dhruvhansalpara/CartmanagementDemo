@@ -9,6 +9,9 @@ interface CartDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(item: CartModel)
 
+    @Update
+    fun updateProduct(person: CartModel)
+
     // Delete function is used to
     // delete data in database.
     @Delete
